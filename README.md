@@ -1,12 +1,15 @@
 <p align="center">
-  <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/discord.svg" alt="Discord" width="64" height="64"/>
-  <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/windows.svg" alt="Windows" width="64" height="64"/>
-  <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/python.svg" alt="Python" width="64" height="64"/>
+  <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/discord.svg" alt="Discord" width="60" height="60"/>
+  <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/windows.svg" alt="Windows" width="60" height="60"/>
+  <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/python.svg" alt="Python" width="60" height="60"/>
 </p>
 
 # System Info Discord Rich Presence
 
 Приложение отображает информацию о системе (CPU, GPU, RAM, диск, ОС) в Discord Rich Presence. Использует OpenHardwareMonitor через WMI и требует client ID Discord-приложения.
+
+> [!TIP]
+> **Совет:** Для корректной работы запускайте OpenHardwareMonitor с правами администратора и убедитесь, что Discord уже запущен.
 
 ## Возможности
 
@@ -24,6 +27,9 @@
 - OpenHardwareMonitor (скачать и запустить с правами администратора)
 - Discord (должен быть запущен)
 - Зависимости: `pypresence`, `psutil`, `pywin32`
+
+> [!IMPORTANT]
+> Не забудьте создать файл `client_id.txt` с вашим Discord client ID и поместить его в папку с программой.
 
 ## Установка
 
@@ -59,6 +65,9 @@
 - Запустите скрипт или EXE.
 - Для отладки смотрите `system_info.log`.
 
+> [!WARNING]
+> Если не отображается информация или возникают ошибки — проверьте, что все требования выполнены и все программы запущены с нужными правами.
+
 ## Проблемы
 
 - Нет `client_id.txt`: Discord Rich Presence отключён, смотрите лог.
@@ -66,6 +75,4 @@
 - Ошибки WMI: проверьте службу WMI (`services.msc`), восстановите при необходимости (`winmgmt /resetrepository`).
 - Discord не обновляет статус: проверьте client ID и работу Discord.
 
-## Лицензия
-
-MIT
+##
