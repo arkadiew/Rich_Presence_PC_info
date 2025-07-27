@@ -1,8 +1,8 @@
-<p align="center">
-  <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/discord.svg" alt="Discord" width="60" height="60"/>
-  <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/windows.svg" alt="Windows" width="60" height="60"/>
-  <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/python.svg" alt="Python" width="60" height="60"/>
-</p>
+![Discord Rich Presence](https://img.shields.io/badge/Discord%20Rich%20Presence-active-5865F2?logo=discord&logoColor=white)
+![Windows](https://img.shields.io/badge/Windows-Supported-0078D6?logo=windows&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green.svg)
+
 
 # System Info Discord Rich Presence
 
