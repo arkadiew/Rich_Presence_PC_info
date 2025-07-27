@@ -46,17 +46,10 @@
    python Rich_Presence_PC_info.py
    ```
 
-## Сборка EXE
+## Запуск EXE
 
-1. Установите PyInstaller:
-   ```
-   pip install pyinstaller
-   ```
-2. Соберите EXE:
-   ```
-   python -m PyInstaller --onefile Rich_Presence_PC_info.py
-   ```
-3. Поместите `client_id.txt` рядом с EXE-файлом.
+1. Установите Rich_Presence_PC_info из Releases:
+2. Поместите `client_id.txt` рядом с EXE-файлом.
 
 ## Использование
 
