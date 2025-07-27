@@ -26,26 +26,31 @@ except ImportError:
     win32com = None
 
 def get_resource_path(relative_path):
-    """Get the absolute path to a resource, works for dev and PyInstaller EXE."""
-    try:
-        base_path = sys._MEIPASS
-    except AttributeError:
+    """Get the absolute path to a resource, prioritizing EXE directory."""
+    if getattr(sys, 'frozen', False):
+        # Running as EXE, use EXE's directory
+        base_path = os.path.dirname(sys.executable)
+    else:
+        # Running as script, use script's directory
         base_path = os.path.abspath(os.path.dirname(__file__))
     return os.path.join(base_path, relative_path)
 
 # Read client_id from external file
+client_id = None
 try:
     client_id_path = get_resource_path("client_id.txt")
+    logging.info(f"Attempting to read client_id from: {client_id_path}")
     with open(client_id_path, "r", encoding="utf-8") as f:
         client_id = f.read().strip()
     logging.info(f"Successfully read client_id from {client_id_path}")
 except Exception as e:
     logging.error(f"Failed to read client ID from file: {e}")
-    sys.exit(1)
+    logging.warning("Disabling Discord Rich Presence due to missing client_id.txt")
+    Presence = None  # Disable Discord Rich Presence
 
 # Initialize Rich Presence client
 RPC = None
-if Presence:
+if Presence and client_id:
     try:
         RPC = Presence(client_id)
         RPC.connect()
@@ -82,9 +87,28 @@ def get_cpu_name():
     return cpu_name
 
 def get_os_info():
-    """Get OS info via platform."""
+    """Universal OS info detection with Windows 11+ support."""
     try:
-        os_info = f"{platform.system()} {platform.release()}"
+        system = platform.system()
+        release = platform.release()
+        if system == "Windows":
+            win_ver = platform.win32_ver()
+            build = 0
+            try:
+                build = int(win_ver[1].split('.')[2])
+            except Exception:
+                pass
+            if release == "10":
+                if build >= 30000:
+                    os_info = f"Windows (future build {build})"
+                elif build >= 22000:
+                    os_info = "Windows 11"
+                else:
+                    os_info = "Windows 10"
+            else:
+                os_info = f"Windows {release}"
+        else:
+            os_info = f"{system} {release}"
         logging.debug(f"OS info from platform: {os_info}")
         return os_info
     except Exception as e:
