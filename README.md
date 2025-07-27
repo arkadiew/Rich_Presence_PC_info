@@ -56,7 +56,7 @@
    ```
    python -m PyInstaller --onefile Rich_Presence_PC_info.py
    ```
-3. Поместите `client_id.txt` в папку `_internal` рядом с EXE-файлом.
+3. Поместите `client_id.txt` рядом с EXE-файлом.
 
 ## Использование
 
