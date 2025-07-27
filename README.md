@@ -48,8 +48,9 @@
 
 ## Запуск EXE
 
-1. Установите Rich_Presence_PC_info из Releases:
-2. Поместите `client_id.txt` рядом с EXE-файлом.
+1. Установите Rich_Presence_PC_info из Releases.
+2. Запустите OpenHardwareMonitor.exe с правами администратора.
+3. Поместите `client_id.txt` рядом с EXE-файлом.
 
 ## Использование
 
