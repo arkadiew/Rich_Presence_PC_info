@@ -1,7 +1,9 @@
 ![Discord Rich Presence](https://img.shields.io/badge/Discord%20Rich%20Presence-active-5865F2?logo=discord&logoColor=white)
 ![Windows](https://img.shields.io/badge/Windows-Supported-0078D6?logo=windows&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-green.svg)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+
+
 
 
 # System Info Discord Rich Presence
